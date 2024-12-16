@@ -40,12 +40,12 @@ func main() {
         EnableSentry: false,
     }
 
-    log, err := logger.New(config)
+    l, err := logger.New(config)
     if err != nil {
         log.Fatalf("Failed to initialize logger: %v", err)
     }
 
-    log.Info("This is an info message")
+    l.Info("This is an info message")
 }
 ```
 
@@ -66,12 +66,12 @@ func main() {
         EnableSentry: false,
     }
 
-    log, err := logger.NewTag(config, "example")
+    l, err := logger.NewTag(config, "example")
     if err != nil {
         log.Fatalf("Failed to initialize logger: %v", err)
     }
 
-    log.Info("This is an info message with a tag")
+    l.Info("This is an info message with a tag")
 }
 ```
 
@@ -92,12 +92,12 @@ func main() {
         EnableSentry: true,
     }
 
-    log, err := logger.New(config)
+    l, err := logger.New(config)
     if err != nil {
         log.Fatalf("Failed to initialize logger: %v", err)
     }
 
-    log.Error("This is an error message")
+    l.Error("This is an error message")
 }
 ```
 
